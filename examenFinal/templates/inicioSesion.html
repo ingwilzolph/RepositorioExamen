@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/static/css/estilosInicioSesion.css">
+    <title>Sesion</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Inicio de Sesíon</h1>
+    <form action="/inicioSesion" method="POST">
+        <label for="nombre">Ingresa tu nombre :</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <br>
+        <label for="palabra_secreta">Ingresa tu contraseña </label>
+        <input type="password" id="palabra_secreta" name="palabra_secreta" required>
+        <br>
+        <button type="submit">Verificar</button>
+    </form>
+    {% if mensaje %}
+    <div>
+        <p>{{mensaje}}</p>
+    </div>
+    {% endif %}
+  </div>
+</body>
+</html>
